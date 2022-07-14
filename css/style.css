@@ -45,11 +45,12 @@ ul {
 
 /* Side Bar Css --------------------------------*/
 .sideBar {
-  width: 270px;
+  border-right: 1px solid var(--bg-black-50);
   background: var(--bg-black-100);
   position: fixed;
   padding: 30px;
   height: 100%;
+  width: 270px;
   z-index: 10;
   left: 0;
   top: 0;
@@ -70,7 +71,6 @@ ul {
   letter-spacing: 5px;
   padding: 15px 20px;
   position: relative;
-  background: red;
   font-weight: 700;
   font-size: 30px;
 }
@@ -78,4 +78,64 @@ ul {
 .sideBar .logo a span {
   font-family: 'Clicker Script', cursive;
   font-size: 40px;
+}
+
+.sideBar .logo a::before {
+  border-bottom: 5px solid var(--skin-color);
+  border-left: 5px solid var(--skin-color);
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  content: '';
+  bottom: 0;
+  left: 0;
+}
+
+.sideBar .logo a::after {
+  border-right: 5px solid var(--skin-color);
+  border-top: 5px solid var(--skin-color);
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  content: '';
+  right: 0;
+  top: 0;
+}
+
+.sideBar .nav-toggler {
+  border: 1px solid var(--bg-black-50);
+  background: var(--bg-black-100);
+  border-radius: 5px;
+  position: fixed;
+  cursor: pointer;
+  height: 40px;
+  width: 45px;
+  left: 300px;
+  top: 0;
+}
+
+.sideBar .nav {
+  margin-top: 50px;
+}
+
+.sideBar .nav li {
+  margin-bottom: 20px;
+  display: block;
+}
+
+.sideBar .nav li a {
+  border-bottom: 1px solid var(--bg-black-50);
+  color: var(--text-black-900);
+  padding: 5px 15px;
+  font-weight: 600;
+  font-size: 16px;
+  display: block;
+}
+
+.sideBar .nav li a.active {
+  color: var(--skin-color);
+}
+
+.sideBar .nav li a i {
+  margin-right: 15px;
 }

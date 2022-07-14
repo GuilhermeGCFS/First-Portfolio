@@ -34,16 +34,52 @@ ul {
 .section {
   background: var(--bg-black-900);
   min-height: 100vh;
-  position: fixed;
+  padding: 0 30px;
   display: block;
-  left: 270px;
   opacity: 1;
-  z-index: 0;
-  right: 0;
-  top: 0;
 }
 
-/* Side Bar Css --------------------------------*/
+.main-content {
+  padding-left: 270px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  width: 100%;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.padd-15 {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.btn {
+  background: var(--skin-color);
+  transition: all 0.3s ease;
+  display: inline-block;
+  white-space: nowrap;
+  border-radius: 40px;
+  padding: 12px 35px;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* Side Bar --------------------------------*/
 .sideBar {
   border-right: 1px solid var(--bg-black-50);
   background: var(--bg-black-100);
@@ -111,7 +147,38 @@ ul {
   height: 40px;
   width: 45px;
   left: 300px;
-  top: 0;
+  top: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.sideBar .nav-toggler span {
+  background: var(--skin-color);
+  display: inline-block;
+  position: relative;
+  height: 2px;
+  width: 18px;
+}
+
+.sideBar .nav-toggler span::before {
+  background: var(--skin-color);
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 18px;
+  top: -6px;
+  left: 0;
+}
+
+.sideBar .nav-toggler span::after {
+  background: var(--skin-color);
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 18px;
+  top: 6px;
+  left: 0;
 }
 
 .sideBar .nav {
@@ -138,4 +205,79 @@ ul {
 
 .sideBar .nav li a i {
   margin-right: 15px;
+}
+
+/* Home --------------------------------*/
+
+.home {
+  color: var(--text-black-900);
+  min-height: 100vh;
+  display: flex;
+}
+
+.home .home-info {
+  max-width: 60%;
+  flex: 0 0 60%;
+}
+
+h3.hello {
+  font-size: 28px;
+  margin: 15px 0;
+}
+
+h3.hello span {
+  font-family: 'Clicker Script', cursive;
+  color: var(--skin-color);
+  font-weight: 700;
+  font-size: 30px;
+}
+
+h3.my-profession {
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+.typing {
+  color: var(--skin-color);
+}
+
+.home-info p {
+  color: var(--text-black-700);
+  margin-bottom: 70px;
+  font-size: 20px;
+}
+
+.home .home-img {
+  text-align: center;
+  position: relative;
+  max-width: 40%;
+  flex: 0 0 40%;
+}
+
+.home .home-img::before {
+  border-left: 10px solid var(--skin-color);
+  border-top: 10px solid var(--skin-color);
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  content: '';
+  left: -20px;
+  top: -40px;
+}
+
+.home .home-img::after {
+  border-bottom: 10px solid var(--skin-color);
+  border-right: 10px solid var(--skin-color);
+  position: absolute;
+  bottom: -40px;
+  height: 80px;
+  content: '';
+  width: 80px;
+  right: 20px;
+}
+
+.home .home-img img {
+  border-radius: 5px;
+  height: 400px;
+  margin: auto;
 }

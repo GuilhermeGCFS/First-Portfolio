@@ -41,6 +41,7 @@ ul {
 
 .section {
   background: var(--bg-black-900);
+  transition: all 0.3s ease;
   overflow-x: hidden;
   min-height: 100vh;
   overflow-y: auto;
@@ -55,9 +56,23 @@ ul {
   top: 0;
 }
 
+.section.back-section {
+  z-index: 1;
+}
+
 .section.active {
+  animation: slideSection 1s ease;
   z-index: 2;
   opacity: 1;
+}
+
+@keyframes slideSection {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .hidden {
@@ -149,9 +164,10 @@ ul {
 }
 
 /* Side Bar --------------------------------*/
-.sideBar {
+.aside {
   border-right: 1px solid var(--bg-black-50);
   background: var(--bg-black-100);
+  transition: all 0.3s ease;
   position: fixed;
   padding: 30px;
   height: 100%;
@@ -164,14 +180,14 @@ ul {
   justify-content: center;
 }
 
-.sideBar .logo {
+.aside .logo {
   text-transform: capitalize;
   position: absolute;
   font-size: 30px;
   top: 50px;
 }
 
-.sideBar .logo a {
+.aside .logo a {
   color: var(--text-black-900);
   letter-spacing: 5px;
   padding: 15px 20px;
@@ -180,12 +196,12 @@ ul {
   font-size: 30px;
 }
 
-.sideBar .logo a span {
+.aside .logo a span {
   font-family: 'Clicker Script', cursive;
   font-size: 40px;
 }
 
-.sideBar .logo a::before {
+.aside .logo a::before {
   border-bottom: 5px solid var(--skin-color);
   border-left: 5px solid var(--skin-color);
   position: absolute;
@@ -196,7 +212,7 @@ ul {
   left: 0;
 }
 
-.sideBar .logo a::after {
+.aside .logo a::after {
   border-right: 5px solid var(--skin-color);
   border-top: 5px solid var(--skin-color);
   position: absolute;
@@ -207,9 +223,10 @@ ul {
   top: 0;
 }
 
-.sideBar .nav-toggler {
+.aside .nav-toggler {
   border: 1px solid var(--bg-black-50);
   background: var(--bg-black-100);
+  transition: all 0.3s ease;
   border-radius: 5px;
   position: fixed;
   cursor: pointer;
@@ -222,7 +239,11 @@ ul {
   justify-content: center;
 }
 
-.sideBar .nav-toggler span {
+.aside .nav-toggler.open span {
+  background: transparent;
+}
+
+.aside .nav-toggler span {
   background: var(--skin-color);
   display: inline-block;
   position: relative;
@@ -230,7 +251,12 @@ ul {
   width: 18px;
 }
 
-.sideBar .nav-toggler span::before {
+.aside .nav-toggler.open span::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.aside .nav-toggler span::before {
   background: var(--skin-color);
   position: absolute;
   content: '';
@@ -240,7 +266,12 @@ ul {
   left: 0;
 }
 
-.sideBar .nav-toggler span::after {
+.aside .nav-toggler.open span::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.aside .nav-toggler span::after {
   background: var(--skin-color);
   position: absolute;
   content: '';
@@ -250,16 +281,16 @@ ul {
   left: 0;
 }
 
-.sideBar .nav {
+.aside .nav {
   margin-top: 50px;
 }
 
-.sideBar .nav li {
+.aside .nav li {
   margin-bottom: 20px;
   display: block;
 }
 
-.sideBar .nav li a {
+.aside .nav li a {
   border-bottom: 1px solid var(--bg-black-50);
   color: var(--text-black-900);
   padding: 5px 15px;
@@ -268,11 +299,11 @@ ul {
   display: block;
 }
 
-.sideBar .nav li a.active {
+.aside .nav li a.active {
   color: var(--skin-color);
 }
 
-.sideBar .nav li a i {
+.aside .nav li a i {
   margin-right: 15px;
 }
 
@@ -404,7 +435,6 @@ h3.my-profession {
 }
 
 .about .about-content .personal-info .buttons .btn {
-  margin-right: 15px;
   margin-top: 10px;
 }
 
@@ -540,7 +570,7 @@ h3.my-profession {
 
 /* Service --------------------------------*/
 .service .container {
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 .service .service-item {
@@ -728,12 +758,33 @@ h3.my-profession {
 
 /* Media Query --------------------------------*/
 @media (max-width: 1199px) {
-  .sideBar {
+  .section .container {
+    padding-top: 70px;
+  }
+
+  .aside {
     left: -270px;
   }
 
-  .main-content {
-    padding-left: 0;
+  .aside.open {
+    left: 0;
+  }
+
+  .aside .nav-toggler {
+    display: flex;
+    left: 30px;
+  }
+
+  .aside .nav-toggler.open {
+    left: 300px;
+  }
+
+  .section {
+    left: 0;
+  }
+
+  .section.open {
+    left: 270px;
   }
 
   .about .about-content .personal-info .info-item p span {

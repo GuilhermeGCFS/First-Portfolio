@@ -79,10 +79,6 @@ ul {
   display: none !important;
 }
 
-/* .main-content {
-  padding-left: 270px;
-} */
-
 .container {
   max-width: 1100px;
   margin: auto;
@@ -139,6 +135,10 @@ ul {
 .padd-15 {
   padding-right: 15px;
   padding-left: 15px;
+}
+
+.mt-30 {
+  margin-top: 30px;
 }
 
 .btn {
@@ -598,6 +598,7 @@ h3.my-profession {
   border-radius: 10px;
   padding: 30px 15px;
   text-align: center;
+  height: 100%;
 }
 
 .service .service-item .service-item-inner:hover {
@@ -659,12 +660,23 @@ h3.my-profession {
 .portfolio .portfolio-heading h2 {
   color: var(--text-black-900);
   font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.portfolio .portfolio-heading h4 {
+  color: var(--text-black-900);
+  font-size: 15px;
 }
 
 .portfolio .portfolio-item {
+  transition: all 0.3s ease;
   margin-bottom: 30px;
   max-width: 33.33%;
   flex: 0 0 33.33%;
+}
+
+.portfolio .portfolio-item:hover {
+  transform: scale(1.05);
 }
 
 .portfolio .portfolio-item-inner {
@@ -706,7 +718,7 @@ h3.my-profession {
 
 .contact .contact-info-item .icon .svg-inline--fa {
   color: var(--skin-color);
-  font-size: 25px;
+  font-size: 28px;
 }
 
 .contact .contact-info-item h4 {
@@ -724,48 +736,15 @@ h3.my-profession {
   font-size: 16px;
 }
 
-.contact .contact-form {
-  max-width: 100%;
-  flex: 0 0 100%;
-}
-
-.contact .contact-form .col-6 {
-  max-width: 50%;
-  flex: 0 0 50%;
-}
-
-.contact .contact-form .col-12 {
-  max-width: 100%;
-  flex: 0 0 100%;
-}
-
-.contact .contact-form .form-item {
-  margin-bottom: 30px;
-}
-
-.contact .contact-form .form-item .form-control {
-  border: 1px solid var(--bg-black-50);
-  background: var(--bg-black-100);
+.contact .contact-info-item p a {
   color: var(--text-black-700);
-  transition: all 0.3s ease;
-  border-radius: 25px;
-  padding: 10px 25px;
+  line-height: 25px;
+  font-weight: 400;
   font-size: 16px;
-  height: 50px;
-  width: 100%;
 }
 
-.contact .contact-form .form-item .form-control:focus {
-  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-}
-
-.contact .contact-form .form-item textarea.form-control {
-  height: 140px;
-}
-
-.contact .contact-form .btn {
-  padding: 0 50px;
-  height: 50px;
+.contact .contact-info-item p a:hover {
+  color: var(--skin-color);
 }
 
 /* Media Query --------------------------------*/

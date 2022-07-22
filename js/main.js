@@ -70,6 +70,7 @@ const nav = document.querySelector(".nav"),
       }
     }
   }
+
   document.querySelector(".hire-me").addEventListener("click", function() {
     const sectionIndex = this.getAttribute("data-section-index");
     showSection(this);
@@ -90,3 +91,26 @@ const nav = document.querySelector(".nav"),
         allSection[i].classList.toggle("open");
       }
     }
+
+//Language Switcher =================================>
+function languageSwitcher() {
+  var portuguese = document.getElementById("PTBR");
+  var english = document.getElementById("ENUS");
+
+  english.classList.toggle("active");
+  portuguese.classList.toggle("active");
+}
+
+let lang = document.getElementById('lang');
+
+function troca() {
+    if (lang.textContent === "PT") {
+        lang.textContent = "EN";
+        lang.value = "EN"
+    } else {
+        lang.textContent = "PT";
+        lang.value = "PT"
+    }
+}
+
+lang.addEventListener('click', troca)

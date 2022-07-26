@@ -180,45 +180,6 @@ ul {
   box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
-/* Switch Language --------------------------------*/
-
-#PTBR, #ENUS {
-  display: none;
-}
-
-#PTBR.active, #ENUS.active {
-  display: block;
-}
-
-.language-switcher {
-  transition: all 0.3s ease;
-  position: fixed;
-  z-index: 101;
-  right: 25px;
-  top: 35px;
-}
-
-.language-switcher:hover {
-  transform: scale(1.05);
-}
-
-.language {
-  border: 1px solid var(--bg-black-50);
-  background: var(--bg-black-100);
-  color: var(--text-black-900);
-  transition: all 0.3s ease;
-  border-radius: 50%;
-  font-weight: 600;
-  font-size: 20px;
-  cursor: pointer;
-  line-height: 1;
-  height: 40px;
-  width: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Side Bar --------------------------------*/
 .aside {
   border-right: 1px solid var(--bg-black-50);
